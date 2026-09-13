@@ -222,6 +222,7 @@ fn value_fact(
         quote: f.quote.clone(),
         subject_span: f.subject_span.clone(),
         object_span: None,
+        relative: false,
     }
 }
 
@@ -470,6 +471,7 @@ mod tests {
             quote: Some(quote.into()),
             subject_span: Some(subject.into()),
             object_span: object.map(str::to_string),
+            relative: false,
         }
     }
     fn valued(subject: &str, predicate: &str, value: &str, quote: &str) -> ExtractedFact {
